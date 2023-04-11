@@ -1,0 +1,33 @@
+import { Resources } from '@/components/Resources'
+import { Guides } from '@/components/Guides'
+import { HeroPattern } from '@/components/HeroPattern'
+import { DonateButton } from '@/components/DonateButton'
+
+export const description =
+  'Nostr is a simple, open protocol that enables global, decentralized, and censorship-resistant publishing on the web.'
+
+export const sections = [
+]
+
+<HeroPattern />
+
+# پیامرسان.ویکی {{ className: 'gradientText pb-4 mb-4 font-display text-3xl md:text-5xl tracking-tight max-w-xl leading-loose' }}
+
+خانه‌ای برای مطالب مربوط به پیام‌رسان‌ها {{ className: 'gradientText pb-1 mb-4 font-display text-xl md:text-2xl tracking-tight max-w-xl' }}
+
+اینروز‌ها انتقال پیام، صدا و تصویر بخشی جدا نشدنی از زندگی ماست. این وبسایت تلاشیست داوطلبانه برای جمع‌آوری مستندات مربوط به پیامرسان‌ها با تمرکز بر پیامرسان‌های آزاد.
+
+در این مسیر بدنبال راهکاری هستیم که پیام‌ها و هویت دیجیتال مارو از دست حکومت‌ها و شرکت‌ها حفظ کنه. اعتقاد داریم که رسیدن به راهکاری کاربرپسند و عملی (در اینترنت ایران) شدنی هست و برای پیدا کردن اون راهکار و گسترشش تلاش می‌کنیم.
+
+
+<div className="not-prose mb-16 mt-6 flex flex-col gap-3 md:flex-row">
+  <Button href="/get-started" arrow="right" children="از اینجا شروع کنید" />
+
+  <Button
+    href="/why-nostr"
+    variant="outline"
+    children="چرا باید از پیام رسان امن استفاده کنیم؟"
+  />
+</div>
+
+<Guides />
