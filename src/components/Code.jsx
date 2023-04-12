@@ -79,7 +79,7 @@ function CopyButton({ code }) {
         )}
       >
         <ClipboardIcon className="h-5 w-5 fill-zinc-500/20 stroke-zinc-500 transition-colors group-hover/button:stroke-zinc-400" />
-        Copy
+        کپی
       </span>
       <span
         aria-hidden={!copied}
@@ -88,7 +88,7 @@ function CopyButton({ code }) {
           !copied && 'translate-y-1.5 opacity-0'
         )}
       >
-        Copied!
+        کپی شد!
       </span>
     </button>
   )
@@ -125,8 +125,8 @@ function CodePanel({ tag, label, code, children }) {
         tag={child.props.tag ?? tag}
         label={child.props.label ?? label}
       />
-      <div className="relative">
-        <pre className="overflow-x-auto p-4 text-xs text-white">{children}</pre>
+      <div className="relative" >
+        <pre dir="auto" className=" text-left overflow-x-auto p-4 text-xs text-white">{children}</pre>
         <CopyButton code={child.props.code ?? code} />
       </div>
     </div>

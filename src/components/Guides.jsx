@@ -6,10 +6,11 @@ import { Heading } from '@/components/Heading'
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
 import { CheckIcon } from './icons/CheckIcon'
 import { CogIcon } from './icons/CogIcon'
+import { NetworkIcon } from './icons/NetworkIcon'
 
 const guides = [
   {
-    href: '/guides/iris',
+    href: '/protocols/matrix',
     name: 'ماتریکس',
     description:
       'پیامرسان متن باز و فدریتد؛ برای ارتباطات امن. کاربرپسند و تست شده عالی برای تعداد محدود کاربر',
@@ -23,55 +24,46 @@ const guides = [
     },
   },
   {
-    href: '/guides/damus',
+    href: '/protocols/xmpp',
     name: 'XMPP',
     description:
       'پروتکل پیامرسانی امن و متن باز فدریتد',
     icon: ChatBubbleIcon,
-    pattern: {
-      y: -6,
-      squares: [
-        [-1, 2],
-        [1, 3],
-      ],
-    },
-  },
-  {
-    href: '/guides/amethyst',
-    name: 'Client: Amethyst (Andriod)',
-    description:
-      'A step-by-step guide to getting start on Nostr using the Amethyst (Android) client.',
-    icon: ChatBubbleIcon,
-    pattern: {
-      y: -6,
-      squares: [
-        [-1, 2],
-        [1, 3],
-      ],
-    },
-  },
-  {
-    href: '/get-verified',
-    name: 'Get Verified',
-    description: 'Learn about NIP-05 verification and how to get verified.',
-    icon: CheckIcon,
-    pattern: {
-      y: 22,
-      squares: [[0, 1]],
-    },
-  },
-  {
-    href: '#',
-    name: 'Relay: Nostream',
-    description:
-      'Learn how to deploy and configure the Nostream relay implementation.',
     comingSoon: true,
-    icon: CogIcon,
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+  },
+  {
+    href: '/protocols/simplex-chat',
+    name: 'SimpleXChat',
+    comingSoon: true,
+    description:
+      'روتکل متن‌باز برای انتقال پیام از طریق رله‌ها',
+    icon: NetworkIcon,
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+  },
+  {
+    href: '/protocols/nostr',
+    name: 'Nostr',
+    description: 'پروتکل پیامرسانی متن‌باز برای انتقال پیام و اطلاعات از طریق رله‌ها',
+    icon: NetworkIcon,
+    comingSoon: true,
     pattern: {
       y: 22,
       squares: [[0, 1]],
     },
-  },
+  }
 ]
 
 function GuideIcon({ icon: Icon }) {
@@ -119,8 +111,8 @@ function GuidePattern({ mouseX, mouseY, ...gridProps }) {
 
 function ComingSoonBadge({ guide }) {
   return (
-    <span className="mr-0 ml-auto rounded-full border border-fuchsia-500/60 bg-fuchsia-500/20 px-2 text-xs text-purple-700 dark:border-fuchsia-500/80 dark:bg-fuchsia-500/10 dark:text-purple-300 ">
-      Coming soon
+    <span className="ml-0 mr-auto rounded-full border border-fuchsia-500/60 bg-fuchsia-500/20 px-2 text-xs text-purple-700 dark:border-fuchsia-500/80 dark:bg-fuchsia-500/10 dark:text-purple-300 ">
+      بزودی
     </span>
   )
 }
@@ -143,7 +135,7 @@ function Guide({ guide }) {
     >
       <GuidePattern {...guide.pattern} mouseX={mouseX} mouseY={mouseY} />
       <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/7.5 group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
-      <div className="relative rounded-2xl px-4 pt-10 pb-4">
+      <div className="relative rounded-2xl w-full px-4 pt-10 pb-4">
         <div className="flex flex-row justify-start">
           <GuideIcon icon={guide.icon} />
           {guide.comingSoon && <ComingSoonBadge />}

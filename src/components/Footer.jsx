@@ -126,10 +126,10 @@ function PageLink({ label, page, previous = false }) {
 
 function PageNavigation() {
   let router = useRouter()
-  let allPages = navigation.flatMap((group) => group.links)
+  let allPages = navigation.flatMap((group) => group?.links? group.links : [])
   let currentPageIndex = allPages.findIndex(
     (page) => page.href === router.pathname
-  )
+  );
 
   if (currentPageIndex === -1) {
     return null
@@ -146,13 +146,13 @@ function PageNavigation() {
     <div className="flex">
       {nextPage && (
         <div className=" flex flex-col items-start gap-3">
-          <PageLink label="Next" page={nextPage} />
+          <PageLink label="صفحه‌ی بعد" page={nextPage} previous />
         </div>
       )}
 
       {previousPage && (
         <div className="mr-auto flex flex-col items-end gap-3">
-          <PageLink label="Previous" page={previousPage} previous />
+          <PageLink label="صفحه‌ی قبلی" page={previousPage} />
         </div>
       )}
     </div>
@@ -216,11 +216,8 @@ function SmallPrint() {
         </div>
       </div>
       <div className="flex items-center gap-4">
-        <SocialLink href="https://twitter.com/erskingardner" icon={TwitterIcon}>
-          Follow us on Twitter
-        </SocialLink>
         <SocialLink
-          href="https://github.com/erskingardner/nostr-how"
+          href="https://github.com/sadraiiali/payamresan-wiki"
           icon={GitHubIcon}
         >
           Follow us on GitHub

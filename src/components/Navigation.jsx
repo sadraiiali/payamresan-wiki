@@ -28,7 +28,14 @@ function TopLevelNavItem({ href, children }) {
   )
 }
 
-function NavLink({ href, tag, active, isAnchorLink = false, children }) {
+function NavLink({
+  href,
+  tag,
+  active,
+  isAnchorLink = false,
+  children,
+  ...props
+}) {
   return (
     <Link
       href={href}
@@ -40,6 +47,7 @@ function NavLink({ href, tag, active, isAnchorLink = false, children }) {
           ? 'text-zinc-900 dark:text-white'
           : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
       )}
+      {...props}
     >
       <span className="truncate">{children}</span>
       {tag && (
@@ -183,14 +191,48 @@ function NavigationGroup({ group, className }) {
   )
 }
 
+// single navigation Item without child
+function NavigationSingle({ item, className }) {
+  // If this is the mobile navigation then we always render the initial
+  // state, so that the state does not change during the close animation.
+  // The state will still update when we re-open (re-render) the navigation.
+  let isInsideMobileNavigation = useIsInsideMobileNavigation()
+  let [router, sections] = useInitialValue(
+    [useRouter(), useSectionStore((s) => s.sections)],
+    isInsideMobileNavigation
+  )
+
+  let active = item.href === router.pathname
+
+  return (
+    <h2
+      layout="position"
+      className="text-xs mt-2 font-semibold text-zinc-900 dark:text-white"
+    >
+      <Link
+        href={`${item.href}`}
+        aria-current={active ? 'page' : undefined}
+        className={clsx(
+          'flex justify-between gap-2 py-1 pl-3 text-sm transition',
+          active
+            ? 'text-zinc-900 dark:text-white'
+            : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
+        )}
+      >
+        <span className="truncate">{item.title}</span>
+      </Link>
+    </h2>
+  )
+}
+
 export const navigation = [
   {
     title: 'مقدمه',
     links: [
-      { title: 'پیامرسان آزاد؟', href: '/payamresan-azad' },
-      { title: 'چرا؟!', href: '/payamresan-why' },
-      { title: 'پیامرسان‌ها', href: '/payamresan-ha' },
-      { title: 'وضعیت فعلی', href: '/payamresan-ha' },
+      { title: 'پیامرسان آزاد؟', href: '/why-open-messenger' },
+      { title: 'چرا؟!', href: '/why' },
+      { title: 'پیامرسان‌ها', href: '/messengers' },
+      { title: 'وضعیت فعلی', href: '/latest-situation' },
     ],
   },
   {
@@ -208,19 +250,31 @@ export const navigation = [
       { title: 'راه‌اندازی سرور ماتریکس', href: '/guides/matrix-server' },
     ],
   },
+  {
+    title: 'پسگفتار',
+    href: '/credits',
+  },
 ]
 
 export function Navigation(props) {
   return (
     <nav {...props}>
       <ul role="list">
-        {navigation.map((group, groupIndex) => (
-          <NavigationGroup
-            key={group.title}
-            group={group}
-            className={groupIndex === 0 && 'md:mt-0'}
-          />
-        ))}
+        {navigation.map((group, groupIndex) =>
+          group?.links?.length > 0 ? (
+            <NavigationGroup
+              key={group.title}
+              group={group}
+              className={groupIndex === 0 && 'md:mt-0'}
+            />
+          ) : (
+            <NavigationSingle
+              key={group.title}
+              item={group}
+              className={groupIndex === 0 && 'md:mt-0'}
+            />
+          )
+        )}
       </ul>
     </nav>
   )
