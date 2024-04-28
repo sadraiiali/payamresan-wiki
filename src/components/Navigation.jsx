@@ -231,6 +231,7 @@ export const navigation = [
     links: [
       { title: 'پیامرسان آزاد؟', href: '/why-open-messenger' },
       { title: 'چرا؟!', href: '/why' },
+      { title: 'استقلال', href: '/independence' },
       { title: 'پیامرسان‌ها', href: '/messengers' },
       { title: 'وضعیت فعلی', href: '/latest-situation' },
     ],
