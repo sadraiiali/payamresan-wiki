@@ -224,35 +224,243 @@ function NavigationSingle({ item, className }) {
     </h2>
   )
 }
-
 export const navigation = [
   {
+    title: 'اصول اولیه',
+    href: '/fundamentals/',
+  },
+  {
     title: 'مقدمه',
+    href: '/introduction/',
+  },
+  {
+    title: 'چرا',
     links: [
-      { title: 'پیامرسان آزاد؟', href: '/why-open-messenger' },
-      { title: 'چرا؟!', href: '/why' },
-      { title: 'پیامرسان‌ها', href: '/messengers' },
-      { title: 'وضعیت فعلی', href: '/latest-situation' },
+      { title: 'استانداردها', href: '/why/standard/' },
+      { title: 'شرایط و ضوابط', href: '/why/terms/' },
+      { title: 'شیوه‌های داده', href: '/why/data-practices/' },
+      { title: 'حفاظت از داده‌ها', href: '/why/data-protection/' },
+      { title: 'استقلال', href: '/why/independence/' },
+      { title: 'فناوری', href: '/why/technology/' },
+      { title: 'سن', href: '/why/age/' },
     ],
   },
   {
-    title: 'راهکار‌ها',
+    title: 'چرا نه ...',
     links: [
-      { title: 'ماتریکس', href: '/protocols/matrix' },
-      { title: 'XMPP', href: '/protocols/xmpp' },
-      { title: 'SimpleXChat', href: '/protocols/simplex-chat' },
-      { title: 'Nostr', href: '/protocols/nostr' },
+      {
+        title: 'واتس‌اپ',
+        href: '/whynot/whatsapp/',
+        links: [
+          {
+            title: 'واتس‌اپ باز',
+            href: '/whynot/whatsapp/openwhatsapp/',
+            links: [
+              { title: 'مقاله 01.06.2018', href: '/whynot/whatsapp/openwhatsapp/20180601/' },
+              { title: 'نامه 06.06.2018', href: '/whynot/whatsapp/openwhatsapp/20180606/' },
+              { title: 'مقاله 23.06.2018', href: '/whynot/whatsapp/openwhatsapp/20180623/' },
+              { title: 'استعلام 12.07.2018', href: '/whynot/whatsapp/openwhatsapp/20180712/' },
+              { title: 'پاسخ BMJV 03.09.2018', href: '/whynot/whatsapp/openwhatsapp/20180903/' },
+            ],
+          },
+          {
+            title: '#DeleteWhatsApp',
+            href: '/whynot/whatsapp/deletewhatsapp/',
+            links: [
+              { title: 'مقاله 28.09.2018', href: '/whynot/whatsapp/deletewhatsapp/20180928/' },
+            ],
+          },
+          {
+            title: 'نظارت با واتس‌اپ',
+            href: '/whynot/whatsapp/surveillance/',
+          },
+        ],
+      },
+      {
+        title: 'سیگنال',
+        href: '/whynot/signal/',
+      },
+      {
+        title: 'استش‌کت / ابر.مدرسه',
+        href: '/whynot/stashcat/',
+      },
     ],
   },
   {
-    title: 'آموزش‌ها',
+    title: 'اسرار ...',
     links: [
-      { title: 'راه‌اندازی سرور ماتریکس', href: '/guides/matrix-server' },
+      { title: 'نگه‌دارندگان اسرار', href: '/secrets/confidants/' },
+      { title: 'شماره‌های محرمانه', href: '/secrets/secret-numbers/' },
+      { title: 'حریم خصوصی', href: '/secrets/privacy/' },
     ],
   },
   {
-    title: 'پسگفتار',
-    href: '/credits',
+    title: 'آموزش و پرورش',
+    links: [
+      { title: 'چک‌لیست برای معرفی', href: '/education/introduction/' },
+      { title: 'حوزه‌های موضوعی', href: '/education/topics/' },
+      { title: 'مدارک', href: '/education/documents/' },
+      { title: 'مقدمه‌ای بر پیام‌رسان‌های غیر آزاد', href: '/education/non-free-messengers-intro/' },
+    ],
+  },
+  {
+    title: 'پیام‌رسان - عمومی',
+    links: [
+      { title: 'توصیه', href: '/messenger-general/recommendation/' },
+      { title: 'مدیریت / BOS / رسانه‌ها', href: '/messenger-general/administration/' },
+      { title: 'کمک به تصمیم‌گیری', href: '/messenger-general/decision-aid/' },
+      { title: 'مبنای تصمیم‌گیری', href: '/messenger-general/decision-basis/' },
+      { title: 'مجوزها (اندروید)', href: '/messenger-general/permissions/' },
+      { title: 'منابع برنامه (اندروید)', href: '/messenger-general/app-sources/' },
+      { title: 'اضطراری', href: '/messenger-general/emergency/' },
+      { title: 'مشکلات', href: '/messenger-general/problems/' },
+      { title: 'افکار', href: '/messenger-general/thoughts/' },
+    ],
+  },
+  {
+    title: 'مقایسه سیستم‌ها',
+    links: [
+      { title: 'مقایسه XMPP/Matrix', href: '/system-comparison/xmpp-matrix/' },
+      { title: 'مقایسه‌های پیام‌رسان', href: '/system-comparison/messenger-comparisons/' },
+      {
+        title: 'مقایسه Stiftung Warentest',
+        href: '/system-comparison/stiftung-warentest/',
+        links: [
+          { title: 'نظر 22.02.2022 13:44', href: '/system-comparison/stiftung-warentest/202202221344/' },
+          { title: 'نظر 22.02.2022 14:17', href: '/system-comparison/stiftung-warentest/202202221417/' },
+          { title: 'نکات انتقادی 24.02.2022', href: '/system-comparison/stiftung-warentest/20220224_02/' },
+          { title: 'نظر 24.02.2022', href: '/system-comparison/stiftung-warentest/20220224_01/' },
+        ],
+      },
+      { title: 'پیام‌رسان‌های تیمی', href: '/system-comparison/team-messengers/' },
+    ],
+  },
+  {
+    title: '= = = مبتنی بر سرور = = =',
+    href: '/server-based/',
+  },
+  {
+    title: 'استاندارد چت (XMPP)',
+    links: [
+      { title: 'حساب چت', href: '/chat-standard-xmpp/account/' },
+      { title: 'سرور', href: '/chat-standard-xmpp/server/' },
+      { title: 'استفاده بهینه از چت', href: '/chat-standard-xmpp/optimal-use/' },
+      { title: 'چت‌های عمومی', href: '/chat-standard-xmpp/public-chats/' },
+      { title: 'اپل و جببر', href: '/chat-standard-xmpp/apple-jabber/' },
+      { title: 'aTalk (اندروید)', href: '/chat-standard-xmpp/atalk/' },
+      { title: 'Monal (iOS/MacOS)', href: '/chat-standard-xmpp/monal/' },
+      { title: 'Chatsecure (iOS)', href: '/chat-standard-xmpp/chatsecure/' },
+      { title: 'Conversations (اندروید)', href: '/chat-standard-xmpp/conversations/' },
+      { title: 'Siskin (iOS)', href: '/chat-standard-xmpp/siskin/' },
+      { title: 'Gajim (لینوکس/ویندوز)', href: '/chat-standard-xmpp/gajim/' },
+      { title: 'اضافات', href: '/chat-standard-xmpp/extras/' },
+    ],
+  },
+  {
+    title: 'ماتریکس',
+    links: [
+      { title: 'Riot/RiotX', href: '/matrix/riot/' },
+      { title: 'المنت', href: '/matrix/element/' },
+      { title: 'افکار', href: '/matrix/thoughts/' },
+    ],
+  },
+  {
+    title: 'SimpleX',
+    href: '/simplex/',
+  },
+  {
+    title: 'چت ایمیل',
+    href: '/email-chat/',
+  },
+  {
+    title: '= = = مبتنی بر سرور = = =',
+    href: '/server-supported/',
+  },
+  {
+    title: 'اکو / گلدباگ / دود',
+    href: '/echo-goldbug-smoke/',
+  },
+  {
+    title: 'اسکاتل‌بات',
+    href: '/scuttlebutt/',
+  },
+  {
+    title: '= = = بدون سرور = = =',
+    href: '/serverless/',
+  },
+  {
+    title: 'بریار',
+    href: '/briar/',
+  },
+  {
+    title: 'پیام‌رسان شبکه محلی',
+    href: '/lan-messenger/',
+  },
+  {
+    title: '- - - - - - سایر - - - - - -',
+    href: '/miscellaneous/',
+  },
+  {
+    title: 'اصطلاحات',
+    links: [
+      { title: 'تعامل‌پذیری', href: '/terms/interoperability/', links: [
+        { title: 'افکار', href: '/terms/interoperability/thoughts/' },
+        { title: 'قانون بازارهای دیجیتال (DMA)', href: '/terms/interoperability/dma/' },
+      ] },
+      { title: 'ساختارهای شبکه', href: '/terms/network-structures/' },
+      { title: 'امنیت توهمی', href: '/terms/pseudo-security/' },
+      { title: 'رمزنگاری', href: '/terms/encryption/', links: [
+        { title: 'افکار', href: '/terms/encryption/thoughts/' },
+      ] },
+      { title: 'ناشناسی', href: '/terms/anonymity/' },
+      { title: 'API', href: '/terms/api/' },
+      { title: 'الکترون', href: '/terms/electron/' },
+      { title: 'فلاتر', href: '/terms/flutter/' },
+      { title: 'P2P/\'بدون سرور\'', href: '/terms/p2p/' },
+      { title: 'اعلان فشاری', href: '/terms/push-notification/' },
+      { title: 'WebRTC, STUN و TURN', href: '/terms/webrtc/' },
+    ],
+  },
+  {
+    title: 'ارجاعات',
+    href: '/references/',
+  },
+  {
+    title: 'قالب‌های متنی',
+    links: [
+      { title: 'قالب \'مطبوعات\'', href: '/text-templates/press/' },
+      { title: 'قالب \'واتس‌اپ کسب‌وکار\'', href: '/text-templates/whatsapp-business/' },
+      { title: 'قالب \'سیستم جزیره‌ای\'', href: '/text-templates/island-system/' },
+      { title: 'قالب \'مدرسه عمومی\'', href: '/text-templates/public-school/' },
+    ],
+  },
+  {
+    title: 'تمام محتوا در یک صفحه',
+    href: '/all-contents/',
+  },
+  {
+    title: '- - - - - - داخلی - - - - - -',
+    href: '/internal/',
+  },
+  {
+    title: 'انگیزه و تشکر',
+    href: '/motivation-and-thanks/',
+  },
+  {
+    title: 'پشتیبانی',
+    href: '/support/',
+  },
+  {
+    title: 'تماس',
+    href: '/contact/',
+  },
+  {
+    title: 'حفاظت از داده‌ها',
+    href: '/data-protection/',
+  },
+  {
+    title: 'اثر انگشت',
+    href: '/legal-notice/',
   },
 ]
 
